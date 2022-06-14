@@ -27,7 +27,7 @@ module.exports = {
         {from: /.*/, to: path.posix.join('/', 'index.html')},
       ],
     },
-    publicPath: '/',
+    publicPath: '/dubbo-admin',
     proxy: {
       '/': {
         target: 'http://localhost:8080/',
