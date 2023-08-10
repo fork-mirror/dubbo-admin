@@ -30,7 +30,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
-@ConditionalOnProperty(name = "swagger.enable", havingValue = "true", matchIfMissing = true)
+@ConditionalOnProperty(name = "swagger.enable", havingValue = "true")
 public class SwaggerConfiguration {
     @Bean
     public Docket createRestApi() {
@@ -45,7 +45,7 @@ public class SwaggerConfiguration {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("dubbo admin swagger api")
-                .description("for more information please visit github page: https://github.com/apache/incubator-dubbo-admin")
+                .description("for more information please visit github page: https://github.com/apache/dubbo-admin")
                 .version("1.0")
                 .build();
     }
