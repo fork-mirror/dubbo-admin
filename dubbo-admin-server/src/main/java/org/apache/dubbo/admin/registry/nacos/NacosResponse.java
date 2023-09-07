@@ -14,23 +14,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.apache.dubbo.admin.registry.nacos;
 
-package org.apache.dubbo.admin.registry.metadata;
+import java.util.List;
 
-import org.apache.dubbo.common.URL;
-import org.apache.dubbo.common.extension.SPI;
-import org.apache.dubbo.metadata.report.identifier.MetadataIdentifier;
+public class NacosResponse {
+    private int count;
+    private List<NacosData> subscribers;
 
-@SPI("zookeeper")
-public interface MetaDataCollector {
+    public int getCount() {
+        return count;
+    }
 
-    void setUrl(URL url);
+    public void setCount(int count) {
+        this.count = count;
+    }
 
-    URL getUrl();
+    public List<NacosData> getSubscribers() {
+        return subscribers;
+    }
 
-    void init();
-
-    String getProviderMetaData(MetadataIdentifier key);
-
-    String getConsumerMetaData(MetadataIdentifier key);
+    public void setSubscribers(List<NacosData> subscribers) {
+        this.subscribers = subscribers;
+    }
 }
+
